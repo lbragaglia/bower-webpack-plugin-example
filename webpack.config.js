@@ -10,13 +10,12 @@ module.exports = {
   module:  {
     loaders: [
       {test: /\.css$/, loader: "style!css"},
-      {test: /\.(woff|svg|ttf|eot)([\?]?.*)$/, loader: "file-loader?name=[name].[ext]"}
+      {test: /\.(woff|svg|ttf|eot)([\?]?.*)$/, loader: "file-loader?name=[name].[ext]"},
+      {test: /\.less$/, loader: "style!css!less"}
     ]
   },
   plugins: [
-    new BowerWebpackPlugin({
-      excludes: /.*\.less/
-    }),
+    new BowerWebpackPlugin(),
     new webpack.ProvidePlugin({
       $:      "jquery",
       jQuery: "jquery"
