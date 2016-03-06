@@ -1,0 +1,1 @@
+# bower-webpack-plugin-example
